@@ -10,8 +10,8 @@ style.use('ggplot')
 # end = dt.datetime(2019,5,25)
 # df = web.DataReader('TSLA', 'yahoo', start, end)
 
-# df.to_csv('tsla.csv')
-df = pd.read_csv('tsla.csv', parse_dates=True, index_col=0)
+# df.to_csv('files/tsla.csv')
+df = pd.read_csv('files/tsla.csv', parse_dates=True, index_col=0)
 
 # print(df.head())
 
