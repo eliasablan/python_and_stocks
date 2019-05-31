@@ -5,7 +5,9 @@ from mpl_finance import candlestick_ohlc
 import matplotlib.dates as mdates
 import pandas as pd
 import pandas_datareader.data as web
+from pandas.plotting import register_matplotlib_converters
 style.use('ggplot')
+register_matplotlib_converters()
 
 """
 Video 1
@@ -19,8 +21,8 @@ Video 1
 """
 Video 2
 """
-# df.to_csv('tsla.csv')
-# df = pd.read_csv('tsla.csv', parse_dates=True, index_col=0)
+# df.to_csv('stocks/tsla.csv')
+# df = pd.read_csv('stocks/tsla.csv', parse_dates=True, index_col=0)
 
 # print(df.head())
 
@@ -42,7 +44,7 @@ Video 2
 """ 
 Video 3
 """
-# df = pd.read_csv('tsla.csv', parse_dates=True, index_col=0)
+# df = pd.read_csv('stocks/tsla.csv', parse_dates=True, index_col=0)
 # # df['100ma']: promedio de los 100 ultimos precios
 # df['100ma'] = df['Adj Close'].rolling(window=100, min_periods=0).mean()
 
@@ -58,7 +60,7 @@ Video 3
 """ 
 Video 4
 """
-df = pd.read_csv('tsla.csv', parse_dates=True, index_col=0)
+df = pd.read_csv('stocks/tsla.csv', parse_dates=True, index_col=0)
 
 df_ohlc = df['Adj Close'].resample('10D').ohlc()
 df_volume = df['Volume'].resample('10D').sum()
