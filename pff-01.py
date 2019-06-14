@@ -14,9 +14,37 @@ Video 1
 """
 # start = dt.datetime(2015,1,1)
 # end = dt.datetime(2019,5,25)
+# # df = web.get_data_yahoo('GOOG', start, end)
 # df = web.DataReader('TSLA', 'yahoo', start, end)
 
 # print(df.tail(10))
+
+"""
+Video 1 (CON MORNINGSTAR - Alternativa del autor)
+"""
+# start = datetime.datetime(2015, 1, 1)
+# end = datetime.datetime.now()
+# df = web.DataReader("TSLA", 'morningstar', start, end)
+# df.reset_index(inplace=True)
+# df.set_index("Date", inplace=True)
+# df = df.drop("Symbol", axis=1)
+
+# print(df.head())
+
+"""
+Video 1 (CON ROBIN HOOD - Alternativa de usuario 'The Urbanist')
+"""
+# df = web.DataReader('CNP', 'robinhood', start, end)
+# df.reset_index(inplace=True)
+# df.drop(['symbol', 'interpolated', 'session'], axis=1, inplace=True)
+# df.rename(index=str, columns={'close_price': 'Close', 
+#                              'high_price': 'High',
+#                              'low_price': 'Low',
+#                              'open_price': 'Open',
+#                              'volume': 'Volume',
+#                              'begins_at': 'Date'}, inplace=True)
+# df.set_index('Date', inplace=True)
+# print(df.head())
 
 """
 Video 2
